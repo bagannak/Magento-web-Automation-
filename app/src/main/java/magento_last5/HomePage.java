@@ -11,7 +11,7 @@ public class HomePage extends BasePage {
     PageWaits waits = new PageWaits(driver);
     PageActions actions = new PageActions(driver);
     private final By loginButtonLocator = By.partialLinkText("Sign In");
-    private final By productLocator = By.partialLinkText("Argus All-Weather Tank");
+    private final By productLocator = By.partialLinkText("Radiant Tee");
     private final By searchBarLocator= By.id("search");
 
     public LoginPage navigateToLoginPage(){
@@ -21,6 +21,7 @@ public class HomePage extends BasePage {
     }
 
     public void searchForProduct(String name){
+        waits.waitForElementToBePresent(searchBarLocator);
         actions.type(searchBarLocator,name);
         actions.type(searchBarLocator, String.valueOf(Keys.ENTER));
 

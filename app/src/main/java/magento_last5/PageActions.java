@@ -2,8 +2,11 @@ package magento_last5;
 
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
-public class PageActions {
+import java.time.Duration;
+
+public class PageActions  {
     private final WebDriver webDriver;
 
     public PageActions(WebDriver webDriver) {
@@ -16,6 +19,7 @@ public class PageActions {
     }
 
     public void type(By by, String value) {
+        webDriver.findElement(by).clear();
         webDriver.findElement(by).sendKeys(value);
     }
 
@@ -31,6 +35,10 @@ public class PageActions {
         jsExecutor.executeScript(script, args);
     }
 
-
+    public void moveToElement(By by){
+        Actions builder = new Actions(webDriver);
+        WebElement element = webDriver.findElement(by);
+        builder.moveToElement(element).pause(Duration.ofSeconds(5)).perform();
+    }
 
 }

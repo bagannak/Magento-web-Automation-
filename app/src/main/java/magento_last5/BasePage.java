@@ -14,6 +14,7 @@ public class BasePage {
         if (driver==null)
             driver = new ChromeDriver();
         driver.get("https://magento.softwaretestingboard.com/");
+        driver.manage().window().maximize();
         return driver;
     }
     public void quiteDriver() {

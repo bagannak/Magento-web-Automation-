@@ -23,6 +23,10 @@ public class PageWaits {
         return (WebElement) wait.until(ExpectedConditions.presenceOfElementLocated(by));
     }
 
+    public WebElement waitForElementToBeClickable(By by){
+        return (WebElement) wait.until(ExpectedConditions.elementToBeClickable(by));
+
+    }
     private FluentWait<WebDriver> initWait(WebDriver webDriver) {
         return new FluentWait<>(webDriver)
                 .withTimeout(Duration.ofSeconds(30))

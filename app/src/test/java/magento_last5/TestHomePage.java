@@ -53,6 +53,17 @@ public class TestHomePage {
 
     }
 
+    @Test
+    public void shouldTestNavigateToProductsPage() {
+        //Arrange
+        String title;
+        //Act
+        homePage.navigateToProductsPage();
+        title = chromeDriver.getTitle();
+        //Assert
+        Assert.assertEquals(title, "Jackets - Tops - Men");
+    }
+
     @AfterClass
     public void tearDownClass() {
 

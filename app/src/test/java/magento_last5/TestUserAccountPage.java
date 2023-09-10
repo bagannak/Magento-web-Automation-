@@ -41,7 +41,16 @@ public class TestUserAccountPage {
         //Assert
         Assert.assertEquals(message, "You saved the account information.");
     }
-
+    @Test
+    public void shouldTestNavigateToAddressBookPage(){
+        //Arrange
+        String title;
+        //Act
+            userAccountPage.navigateToAddressBookPage();
+            title = chromeDriver.getTitle();
+        //Assert
+        Assert.assertEquals(title,"Address Book");
+    }
     @AfterClass
     public void tearDownClass() {
         basePage.quiteDriver();

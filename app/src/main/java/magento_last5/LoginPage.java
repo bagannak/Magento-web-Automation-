@@ -16,7 +16,7 @@ public class LoginPage extends BasePage{
     public HomePage logIn(){
         waits.waitForElementToBePresent(emailInputLocator);
         actions.type(emailInputLocator,"bagannak@testvagrant.com");
-        actions.type(passwordInputLocator,"baganna$321");
+        actions.type(passwordInputLocator,"Baganna$321");
         actions.click(signInBtnLocator);
         return new HomePage(driver);
 

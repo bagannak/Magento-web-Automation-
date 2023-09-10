@@ -14,6 +14,9 @@ public class HomePage extends BasePage {
     private final By productLocator = By.partialLinkText("Radiant Tee");
     private final By searchBarLocator= By.id("search");
 
+    By btn = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button");
+    By myAccountBtnLocator = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[1]/a");
+
     public LoginPage navigateToLoginPage(){
         waits.waitForElementToBePresent(loginButtonLocator);
         actions.click(loginButtonLocator);
@@ -30,5 +33,13 @@ public class HomePage extends BasePage {
     public ProductPage navigateToProductPage(){
         actions.click(productLocator);
         return new ProductPage(driver);
+    }
+
+    public UserAccountPage navigateToUserAccountPage(){
+        waits.waitForElementToBePresent(btn);
+        actions.click(btn);
+        waits.waitForElementToBePresent(myAccountBtnLocator);
+        actions.click(myAccountBtnLocator);
+        return new UserAccountPage(driver);
     }
 }

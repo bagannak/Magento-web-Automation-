@@ -16,8 +16,6 @@ public class ProductPage extends BasePage{
     private final By sizeSelectBtnLocator = By.xpath("/html/body/div[2]/main/div[2]/div/div[1]/div[4]/form/div[1]/div/div/div[1]/div/div[3]");
     private final By colorSelectBtnLocator = By.xpath("/html/body/div[2]/main/div[2]/div/div[1]/div[4]/form/div[1]/div/div/div[2]/div/div");
     private final By qtyInputLocator = By.xpath("/html/body/div[2]/main/div[2]/div/div[1]/div[4]/form/div[2]/div/div/div[1]/div/input");
-    private final By updateWishListBtnLocator = By.xpath("/html/body/div[2]/main/div[2]/div/div[1]/div[5]/div/a[1]");
-
     private final By addAllToCartBtnLocator = By.xpath("/html/body/div[2]/main/div[2]/div[1]/form/div[2]/div[1]/button[3]");
     private final By addToCartBtnLocator = By.cssSelector("div.product-item-inner > div.box-tocart > fieldset > div.product-item-actions > div > button");
     private final By addToCartBtnLocator2 = By.id("product-addtocart-button");

@@ -2,6 +2,7 @@ package magento_last5;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -44,5 +45,9 @@ public class TestWIshListPage {
         //Assert
         Assert.assertEquals(chromeDriver.getTitle(), "My Wish List");
 
+    }
+    @AfterClass
+    public void tearDownClass() {
+        basePage.quiteDriver();
     }
 }

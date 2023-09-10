@@ -13,7 +13,7 @@ public class TestProductPage {
     WishListPage wishListPage;
     ProductPage productPage;
 
-    @BeforeClass
+    @BeforeClass(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -23,7 +23,7 @@ public class TestProductPage {
         waits = new PageWaits(chromeDriver);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, groups = "run-all")
     public void shouldTestAddProductToWishList() {
         //Arrange
          productPage = homePage.navigateToProductPage();
@@ -36,7 +36,7 @@ public class TestProductPage {
     }
 
 
-@Test(priority = 2)
+@Test(priority = 2, groups = "run-all")
 public void shouldTestAddProductToCart(){
     //Arrange
 By countLocator = By.xpath("//*[@class = 'counter-number']");

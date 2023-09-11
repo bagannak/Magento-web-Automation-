@@ -13,7 +13,7 @@ public class TestProductPage {
     WishListPage wishListPage;
     ProductPage productPage;
 
-    @BeforeClass
+    @BeforeClass(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -22,7 +22,7 @@ public class TestProductPage {
         loginPage.logIn();
         waits = new PageWaits(chromeDriver);
     }
-
+//PP01
     @Test(priority = 1, groups = "run-all")
     public void shouldTestAddProductToWishList() {
         //Arrange
@@ -35,7 +35,7 @@ public class TestProductPage {
         Assert.assertEquals(chromeDriver.getTitle(), "My Wish List");
     }
 
-
+//PP02
 @Test(priority = 2, groups = "run-all")
 public void shouldTestAddProductToCart(){
     //Arrange

@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="AllTestsSuite" verbose="1">
+    <test name="All">
+        <groups>
+            <run>
+                <include name="run-all"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="magento_last5.TestProductPage"/>
+            <class name="magento_last5.TestWishListPage"/>
+            <class name="magento_last5.TestProductsPage"/>
+            <class name="magento_last5.TestUserAccountPage"/>
+            <class name="magento_last5.TestHomePage"/>
+            <class name="magento_last5.TestAddressBookPage"/>
+            <class name="magento_last5.TestOrderPage"/>
+        </classes>
+    </test>
+</suite>

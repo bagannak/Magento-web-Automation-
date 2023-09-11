@@ -16,7 +16,7 @@ public class TestAddressBookPage {
     LoginPage loginPage;
 
 
-    @BeforeClass
+    @BeforeClass(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -26,7 +26,7 @@ public class TestAddressBookPage {
         waits = new PageWaits(chromeDriver);
         userAccountPage = homePage.navigateToUserAccountPage();
     }
-
+//ABP01
     @Test(priority = 1,groups = "run-all")
     public void shouldTestAddNewAddress() throws InterruptedException {
         //Arrange
@@ -40,7 +40,7 @@ public class TestAddressBookPage {
         //Assert
         Assert.assertEquals(mes,"You saved the address.");
     }
-
+//ABP02
     @Test(priority = 2,groups = "run-all")
     public void shouldTestDeleteAddress(){
         //Arrange

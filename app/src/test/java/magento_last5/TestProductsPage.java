@@ -1,6 +1,7 @@
 package magento_last5;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -18,7 +19,7 @@ public class TestProductsPage {
         homePage = new HomePage(chromeDriver);
         productsPage = homePage.navigateToProductsPage();
     }
-
+//PsP01
     @Test(priority = 1,groups = "run-all")
     public void shouldTestAddFilters(){
         //Arrange
@@ -26,8 +27,9 @@ public class TestProductsPage {
         //Act
             productsPage.addFilters();
         //Assert
+        Assert.assertEquals(chromeDriver.getTitle(),"Jackets - Tops - men");
     }
-
+//PsP02
     @Test(priority = 2,groups = "run-all")
     public void shouldTestClearFilters(){
         //Arrange
@@ -35,6 +37,8 @@ public class TestProductsPage {
         //Act
             productsPage.clearFilters();
         //Assert
+        Assert.assertEquals(chromeDriver.getTitle(),"Jackets - Tops - men");
+
     }
     @AfterClass
     public void tearDownClass() {

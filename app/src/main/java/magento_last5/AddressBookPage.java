@@ -24,7 +24,7 @@ public class AddressBookPage extends BasePage {
     private final By selectCountryLocator = By.cssSelector("#country");
     private final By saveBtnLocator = By.xpath("/html/body/div[2]/main/div[2]/div[1]/form/div/div[1]/button");
 
-    private final By deleteBtnLocator = By.xpath("//*/a[@role ='delete-address']");
+    private final By deleteBtnLocator = By.xpath("//a[@class = 'action delete' and @role = 'delete-address']");
 
 
     public void addNewAddress() {

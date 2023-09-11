@@ -31,7 +31,7 @@ public class TestUserAccountPage {
         waits = new PageWaits(chromeDriver);
         userAccountPage = homePage.navigateToUserAccountPage();
     }
-
+//UAP01
     @Test(groups = "run-all")
     public void shouldTestEditUserInfo(){
         //Arrange
@@ -40,13 +40,13 @@ public class TestUserAccountPage {
         userAccountPage.editUserInfo();
         WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(6));
         wait.until(ExpectedConditions.visibilityOfElementLocated(successMassageLocator));
-//        waits.waitForElementToBePresent(successMassageLocator);
         WebElement messageEle = chromeDriver.findElement(successMassageLocator);
         String message = messageEle.getText();
 
         //Assert
         Assert.assertEquals(message, "You saved the account information.");
     }
+    //UAP02
     @Test(groups = "run-all")
     public void shouldTestNavigateToAddressBookPage(){
         //Arrange

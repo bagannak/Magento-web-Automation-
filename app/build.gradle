@@ -50,9 +50,17 @@ tasks.named('test') {
     }
 }
 
+
+
 task homeTest(type: Test) {
     useTestNG() {
         suites 'src/test/resources/testhomepage.xml'
+    }
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testng.xml'
     }
 }
 

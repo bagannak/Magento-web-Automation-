@@ -14,7 +14,7 @@ public class TestWishListPage {
     WishListPage wishListPage;
 
 
-    @BeforeClass
+    @BeforeClass(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -25,7 +25,7 @@ public class TestWishListPage {
         ProductPage productPage = homePage.navigateToProductPage();
         wishListPage = productPage.addProductToWishList();
     }
-
+//WP01
     @Test(groups = "run-all")
     public void shouldEditProductFromWishList() {
         //Arrange
@@ -35,7 +35,7 @@ public class TestWishListPage {
         //Assert
         Assert.assertEquals(chromeDriver.getTitle(), "My Wish List");
     }
-
+//WP02
     @Test(groups = "run-all")
     public void shouldDeleteProductFromWishList() {
         //Arrange

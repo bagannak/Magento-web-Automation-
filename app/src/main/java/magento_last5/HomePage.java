@@ -31,7 +31,7 @@ private final By myOrderBtnLocator = By.xpath("/html/body/div[2]/main/div[2]/div
     public void searchForProduct(String name) {
         waits.waitForElementToBePresent(searchBarLocator);
         actions.type(searchBarLocator, name);
-        actions.type(searchBarLocator, String.valueOf(Keys.ENTER));
+        driver.findElement(searchBarLocator).sendKeys(Keys.ENTER);
 
     }
 

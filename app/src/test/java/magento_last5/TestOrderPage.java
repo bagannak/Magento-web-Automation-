@@ -2,6 +2,7 @@ package magento_last5;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -22,7 +23,7 @@ public class TestOrderPage {
         waits = new PageWaits(chromeDriver);
         orderPage = homePage.navigateToOrderPage();
     }
-
+//OP01
     @Test(groups = "run-all")
     public void shouldTestViewOrderDetails() {
         //Arrange
@@ -33,4 +34,9 @@ public class TestOrderPage {
         //Assert
         Assert.assertEquals(title,"Order # 000021722");
     }
+    @AfterClass
+    public void tearDownClass() {
+        basePage.quiteDriver();
+    }
+
 }

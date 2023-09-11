@@ -3,9 +3,7 @@ package magento_last5;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestAddressBookPage {
     WebDriver chromeDriver = null;
@@ -16,7 +14,7 @@ public class TestAddressBookPage {
     LoginPage loginPage;
 
 
-    @BeforeClass(groups = "run-all")
+    @BeforeTest(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -54,7 +52,7 @@ public class TestAddressBookPage {
         Assert.assertEquals(mes,"You deleted the address.");
     }
 
-    @AfterClass
+    @AfterTest(groups = "run-all")
     public void tearDownClass() {
         basePage.quiteDriver();
     }

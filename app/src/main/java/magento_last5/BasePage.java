@@ -11,14 +11,15 @@ public class BasePage {
     }
 
     public WebDriver launchDriver() {
-        if (driver==null)
+        if (driver == null)
             driver = new ChromeDriver();
         driver.get("https://magento.softwaretestingboard.com/");
         driver.manage().window().maximize();
         return driver;
     }
+
     public void quiteDriver() {
-        if(driver!=null)
+        if (driver != null)
             driver.quit();
     }
 

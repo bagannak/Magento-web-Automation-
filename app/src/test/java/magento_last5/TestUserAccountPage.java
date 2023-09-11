@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.Duration;
 
@@ -21,7 +19,7 @@ public class TestUserAccountPage {
     LoginPage loginPage;
 
 
-    @BeforeClass(groups = "run-all")
+    @BeforeTest(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -57,7 +55,7 @@ public class TestUserAccountPage {
         //Assert
         Assert.assertEquals(title,"Address Book");
     }
-    @AfterClass
+    @AfterTest(groups = "run-all")
     public void tearDownClass() {
         basePage.quiteDriver();
     }

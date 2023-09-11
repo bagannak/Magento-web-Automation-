@@ -2,9 +2,7 @@ package magento_last5;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 public class TestHomePage {
     WebDriver chromeDriver = null;
@@ -13,7 +11,7 @@ public class TestHomePage {
     WishListPage wishListPage;
 
 
-    @BeforeClass(groups = "run-all")
+    @BeforeTest(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -82,7 +80,7 @@ public class TestHomePage {
         Assert.assertEquals(title,"My Orders");
     }
 
-    @AfterClass
+    @AfterTest(groups = "run-all")
     public void tearDownClass() {
 
         basePage.quiteDriver();

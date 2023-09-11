@@ -14,7 +14,7 @@ public class TestAddressBookPage {
     LoginPage loginPage;
 
 
-    @BeforeTest(groups = "run-all")
+    @BeforeTest(groups =  {"run-all","sanity"})
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -25,7 +25,7 @@ public class TestAddressBookPage {
         userAccountPage = homePage.navigateToUserAccountPage();
     }
 //ABP01
-    @Test(priority = 1,groups = "run-all")
+    @Test(priority = 1,groups = {"run-all","sanity"})
     public void shouldTestAddNewAddress() throws InterruptedException {
         //Arrange
 

@@ -3,7 +3,6 @@
     <test name="All">
         <groups>
             <run>
-                <include name="run-all"/>
                 <include name="sanity"/>
             </run>
         </groups>

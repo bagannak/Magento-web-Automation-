@@ -11,7 +11,7 @@ public class TestOrderPage {
     PageWaits waits;
     OrderPage orderPage;
 
-    @BeforeTest(groups = "run-all")
+    @BeforeTest(groups = {"run-all","sanity"})
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -22,7 +22,7 @@ public class TestOrderPage {
         orderPage = homePage.navigateToOrderPage();
     }
 //OP01
-    @Test(groups = "run-all")
+    @Test(groups = {"run-all","sanity"})
     public void shouldTestViewOrderDetails() {
         //Arrange
         String title;

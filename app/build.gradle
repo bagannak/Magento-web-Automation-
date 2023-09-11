@@ -63,7 +63,11 @@ test {
         suites 'src/test/resources/testng.xml'
     }
 }
-
+task runSanityTests(type: Test){
+    useTestNG() {
+        suites 'src/test/resources/sanity.xml'
+    }
+}
 task runHomeTest(type: Test) {
     dependsOn 'homeTest'
     description = 'Run the Vitals test suite using TestNG'

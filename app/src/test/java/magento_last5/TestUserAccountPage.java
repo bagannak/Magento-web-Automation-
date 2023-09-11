@@ -19,7 +19,7 @@ public class TestUserAccountPage {
     LoginPage loginPage;
 
 
-    @BeforeTest(groups = "run-all")
+    @BeforeTest(groups =  {"run-all","sanity"})
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -30,7 +30,7 @@ public class TestUserAccountPage {
         userAccountPage = homePage.navigateToUserAccountPage();
     }
 //UAP01
-    @Test(groups = "run-all")
+    @Test(groups = {"run-all","sanity"})
     public void shouldTestEditUserInfo(){
         //Arrange
         By successMassageLocator = By.xpath("//div[@role='alert']/div/div");
@@ -45,7 +45,7 @@ public class TestUserAccountPage {
         Assert.assertEquals(message, "You saved the account information.");
     }
     //UAP02
-    @Test(groups = "run-all")
+    @Test(groups = {"run-all","sanity"})
     public void shouldTestNavigateToAddressBookPage(){
         //Arrange
         String title;

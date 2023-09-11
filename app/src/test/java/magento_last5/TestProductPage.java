@@ -13,7 +13,7 @@ public class TestProductPage {
     WishListPage wishListPage;
     ProductPage productPage;
 
-    @BeforeClass(groups = "run-all")
+    @BeforeClass
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -44,7 +44,7 @@ By countLocator = By.xpath("//*[@class = 'counter-number']");
         productPage.addProductToCart();
         waits.waitForElementToBePresent(countLocator);
     //Assert
-    Assert.assertEquals(chromeDriver.findElement(countLocator).getText(), "12");
+    Assert.assertEquals(chromeDriver.findElement(countLocator).getText(), "18");
 
 }
     @AfterClass

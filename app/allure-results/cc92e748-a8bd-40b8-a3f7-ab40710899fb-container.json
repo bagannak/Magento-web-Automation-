@@ -1,0 +1,1 @@
+{"uuid":"cc92e748-a8bd-40b8-a3f7-ab40710899fb","name":"magento_last5.TestUserAccountPage","children":["ba067769-acf5-492d-80e9-838e7cb9c4a7"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1694416357528,"stop":1694416367930}],"afters":[],"start":1694416357495,"stop":1694416371699}

@@ -10,8 +10,10 @@ public class TestHomePage {
     WebDriver chromeDriver = null;
     HomePage homePage;
     BasePage basePage;
+    WishListPage wishListPage;
 
-    @BeforeClass(groups = "run-all")
+
+    @BeforeClass
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -53,7 +55,7 @@ public class TestHomePage {
 
     }
 
-    @Test
+    @Test(groups = {"run-all"})
     public void shouldTestNavigateToProductsPage() {
         //Arrange
         String title;
@@ -62,6 +64,19 @@ public class TestHomePage {
         title = chromeDriver.getTitle();
         //Assert
         Assert.assertEquals(title, "Jackets - Tops - Men");
+    }
+
+    @Test( groups = "run-all")
+    public void shouldTestNavigateToOrderPage(){
+        //Arrange
+        String title;
+        LoginPage loginPage = homePage.navigateToLoginPage();
+        //Act
+        loginPage.logIn();
+        homePage.navigateToOrderPage();
+        title = chromeDriver.getTitle();
+        //Assert
+        Assert.assertEquals(title,"My Orders");
     }
 
     @AfterClass

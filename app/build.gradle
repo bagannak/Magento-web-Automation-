@@ -45,5 +45,89 @@ application {
 
 tasks.named('test') {
     // Use TestNG for unit tests.
-    useTestNG()
+    useTestNG(){
+        suites 'src/test/resources/tesng.xml'
+    }
+}
+
+task homeTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testhomepage.xml'
+    }
+}
+
+task runHomeTest(type: Test) {
+    dependsOn 'homeTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
+}
+task orderTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testOrdrPage.xml'
+    }
+}
+
+task runOrderTest(type: Test) {
+    dependsOn 'orderTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
+}
+
+task addressBookTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testAddressBookPage.xml'
+    }
+}
+
+task runAddressBookTest(type: Test) {
+    dependsOn 'addressBookTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
+}
+
+task productPageTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testProductPage.xml'
+    }
+}
+
+task runProductPageTest(type: Test) {
+    dependsOn 'productPageTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
+}
+
+task productsPageTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testProductsPage.xml'
+    }
+}
+
+task runProductsPageTest(type: Test) {
+    dependsOn 'productsPageTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
+}
+
+task userAccountPageTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testUserAccountPage.xml'
+    }
+}
+
+task runUserAccountPageTest(type: Test) {
+    dependsOn 'userAccountPageTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
+}
+task wishListPageTest(type: Test) {
+    useTestNG() {
+        suites 'src/test/resources/testWishListPage.xml'
+    }
+}
+
+task runWishListPageTest(type: Test) {
+    dependsOn 'wishListPageTest'
+    description = 'Run the Vitals test suite using TestNG'
+    group = 'verification'
 }

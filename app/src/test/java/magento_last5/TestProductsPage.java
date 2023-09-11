@@ -19,7 +19,7 @@ public class TestProductsPage {
         productsPage = homePage.navigateToProductsPage();
     }
 
-    @Test
+    @Test(priority = 1,groups = "run-all")
     public void shouldTestAddFilters(){
         //Arrange
 
@@ -28,7 +28,7 @@ public class TestProductsPage {
         //Assert
     }
 
-    @Test
+    @Test(priority = 2,groups = "run-all")
     public void shouldTestClearFilters(){
         //Arrange
 

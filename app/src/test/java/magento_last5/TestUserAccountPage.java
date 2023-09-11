@@ -3,10 +3,14 @@ package magento_last5;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class TestUserAccountPage {
     WebDriver chromeDriver = null;
@@ -17,7 +21,7 @@ public class TestUserAccountPage {
     LoginPage loginPage;
 
 
-    @BeforeClass
+    @BeforeClass(groups = "run-all")
     public void setUp() {
         basePage = new BasePage(chromeDriver);
         chromeDriver = basePage.launchDriver();
@@ -28,20 +32,22 @@ public class TestUserAccountPage {
         userAccountPage = homePage.navigateToUserAccountPage();
     }
 
-    @Test
-    public void shouldTestEditUserInfo() {
+    @Test(groups = "run-all")
+    public void shouldTestEditUserInfo(){
         //Arrange
-        By successMassageLocator = By.xpath("/html/body/div[2]/main/div[1]/div[2]/div/div/div");
+        By successMassageLocator = By.xpath("//div[@role='alert']/div/div");
         //Act
         userAccountPage.editUserInfo();
-        waits.waitForElementToBePresent(successMassageLocator);
+        WebDriverWait wait = new WebDriverWait(chromeDriver, Duration.ofSeconds(6));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(successMassageLocator));
+//        waits.waitForElementToBePresent(successMassageLocator);
         WebElement messageEle = chromeDriver.findElement(successMassageLocator);
         String message = messageEle.getText();
 
         //Assert
         Assert.assertEquals(message, "You saved the account information.");
     }
-    @Test
+    @Test(groups = "run-all")
     public void shouldTestNavigateToAddressBookPage(){
         //Arrange
         String title;

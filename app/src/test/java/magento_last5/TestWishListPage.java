@@ -6,7 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TestWIshListPage {
+public class TestWishListPage {
     WebDriver chromeDriver = null;
     HomePage homePage;
     BasePage basePage;
@@ -26,7 +26,7 @@ public class TestWIshListPage {
         wishListPage = productPage.addProductToWishList();
     }
 
-    @Test
+    @Test(groups = "run-all")
     public void shouldEditProductFromWishList() {
         //Arrange
 
@@ -36,7 +36,7 @@ public class TestWIshListPage {
         Assert.assertEquals(chromeDriver.getTitle(), "My Wish List");
     }
 
-    @Test
+    @Test(groups = "run-all")
     public void shouldDeleteProductFromWishList() {
         //Arrange
 

@@ -27,7 +27,7 @@ public class TestAddressBookPage {
         userAccountPage = homePage.navigateToUserAccountPage();
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1,groups = "run-all")
     public void shouldTestAddNewAddress() throws InterruptedException {
         //Arrange
 
@@ -41,7 +41,7 @@ public class TestAddressBookPage {
         Assert.assertEquals(mes,"You saved the address.");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2,groups = "run-all")
     public void shouldTestDeleteAddress(){
         //Arrange
 

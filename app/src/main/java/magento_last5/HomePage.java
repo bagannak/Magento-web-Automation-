@@ -18,10 +18,10 @@ public class HomePage extends BasePage {
     private final By topsDropdownLocator = By.xpath("//*/a[@id = 'ui-id-17']");
     private final By jacketsLocator = By.xpath("//*/a[@id = 'ui-id-19']");
 
-    By btn = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button");
-    By myAccountBtnLocator = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[1]/a");
+    private final By btn = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/span/button");
+    private final By myAccountBtnLocator = By.xpath("/html/body/div[2]/header/div[1]/div/ul/li[2]/div/ul/li[1]/a");
 
-
+private final By myOrderBtnLocator = By.xpath("/html/body/div[2]/main/div[2]/div[2]/div/div[2]/ul/li[2]/a");
     public LoginPage navigateToLoginPage() {
         waits.waitForElementToBePresent(loginButtonLocator);
         actions.click(loginButtonLocator);
@@ -36,6 +36,7 @@ public class HomePage extends BasePage {
     }
 
     public ProductPage navigateToProductPage() {
+        waits.waitForElementToBePresent(productLocator);
         actions.click(productLocator);
         return new ProductPage(driver);
     }
@@ -57,5 +58,13 @@ public class HomePage extends BasePage {
         waits.waitForElementToBePresent(jacketsLocator);
         actions.click(jacketsLocator);
         return new ProductsPage(driver);
+    }
+
+
+    public OrderPage navigateToOrderPage(){
+        navigateToUserAccountPage();
+        waits.waitForElementToBePresent(myOrderBtnLocator);
+        actions.click(myOrderBtnLocator);
+        return new OrderPage(driver);
     }
 }
